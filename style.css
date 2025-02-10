@@ -1,0 +1,462 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header & Navigation */
+  header {
+    background: #5084b9;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: black;
+    margin-right: 10px;
+    font-weight: bolder;
+
+  }
+  .logo h4{
+    margin-left: 110px;color: brown;
+     font-family: Brush Script MT, cursive;
+     font-size: 30px;
+     font-weight: lighter;
+     position: relative;
+     top:-22px; /* Moves "Anderson" slightly up */
+  }
+  @media(max-width: 786px){
+    .logo{
+        font-size: 15px;
+        width: auto;
+    };
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 1rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+ /* --- Existing Hero Section Styles --- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 900px; /* Adjust as needed */
+  }
+  
+  .hero-slider {
+    position: relative;
+    height: 100%;
+  }
+  
+  .slide {
+    display: none; /* Hide slides by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  /* Hero image and overlay */
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dim effect */
+  }
+  
+  
+  /* Hero content positioning */
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Place above overlay */
+  }
+  
+  /* --- New Animation Rules --- */
+  /* When a slide becomes active, animate the hero image and text */
+  .slide.active .hero-image {
+    animation: slideInFromRight 1.3s ease-out forwards;
+  }
+  
+  .slide.active .hero-content {
+    animation: slideInFromLeft 1.1s ease-out forwards;
+  }
+  
+  /* Keyframes for the image sliding in from the right */
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Keyframes for the text sliding in from the left */
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(10);
+      opacity: 1;
+    }
+  }
+  
+  /* --- Navigation Buttons --- */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a43737;
+    font-size: 2rem;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 3;
+    user-select: none;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .next {
+    right: 20px;
+  }
+  
+  /* --- Button Styles --- */
+  .btn {
+    display: inline-block;
+    background: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+   
+  }
+  
+  .btn:hover {
+    background: #e5533d;
+  }
+  
+  .container_text {
+    display: flex;
+    max-width: 1000px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.image-section_1 {
+    width: 100%;
+    background: linear-gradient(to top, #654a1b, #33547c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+}
+.image-section_1 img {
+    width: 90%;
+    border-radius: 10px;
+    height: 500px;
+}
+@media(max-width: 786px){
+    .image-section_1 img{
+
+        height: 200px;
+    }
+
+}
+  
+.image-section {
+    width: 50%;
+    background: linear-gradient(to top, #d8a857, #663399);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+ 
+}
+.image-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+    .text-section {
+        width: 50%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+.text-section h2 {
+    color: #102C57;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.text-section h3 {
+    color: #d84315;
+    font-size: 18px;
+    font-weight: 400;
+}
+.text-section p {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.btn {
+    background: #5200ff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    width: 40%;
+    margin: auto;
+}
+@media (max-width: 768px) {
+    .container_text {
+        flex-direction: column;
+        text-align: center;
+        margin: auto; /* Center the container */
+        width: 80%;
+
+    }
+    .image-section {
+        width: 100%;
+
+}
+    .text-section {
+        width: 100%;
+        position: relative; /* Instead of absolute */
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .text-section h2, .text-section h3, .text-section p {
+        color: white;
+    }
+    .btn{
+        width: 70%;
+        margin: auto;
+    }
+}
+
+  
+  
+  .pastoral-info img{
+    height: 200px;
+  }
+
+  /* Section Styles */
+  section {
+    padding: 60px 0;
+  }
+  
+  section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #ffffff;
+    font-family: fantasy;
+    font-size: 54px;
+  }
+  
+  /* Grid Layouts for Gallery, Staff, Ministries */
+  .gallery-grid,
+  .staff,
+  .ministry-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  form input,
+  form textarea,
+  form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background: #004d99;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background: #003366;
+  }
+  
+  /* Footer */
+  footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+    nav ul.active {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+ /* Initial state: Elements are hidden */
+.animated {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When scrolling down: Slide up from bottom */
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* When scrolling up: Slide down from top */
+.animated.hidden {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.mission-purpose-container {
+    display: flex;
+    justify-content: space-between; /* Space them out */
+    align-items: flex-start; /* Align to top */
+    gap: 20px; /* Space between the two sections */
+    
+}
+
+.mission {
+    width: 60%; /* Takes more space */
+}
+
+.purpose {
+    width: 40%; /* Smaller, positioned to the right */
+    text-align: right; /* Align text to the right */
+   margin-bottom: 200px;
+}
+
+@media (max-width: 768px) {
+    .mission-purpose-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mission, .purpose {
+        width: 100%;
+        text-align: center;
+    }
+}
+
